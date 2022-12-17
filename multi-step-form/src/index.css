@@ -1,0 +1,274 @@
+:root {
+  /* Primary */
+  --Marine-blue: hsl(213, 96%, 18%); /* #02295a */
+  --Purplish-blue: hsl(243, 100%, 62%); /* #473dff */
+  --Pastel-blue: hsl(228, 100%, 84%); /*	#adbeff */
+  --Light-blue: hsl(206, 94%, 87%); /* #bfe2fd */
+  --Strawberry-red: hsl(354, 84%, 57%); /* #ed3548 */
+  /* Neutral */
+  --Cool-gray: hsl(231, 11%, 63%); /* #9699ab */
+  --Light-gray: hsl(229, 24%, 87%); /*	#d6d9e6 */
+  --Magnolia: hsl(217, 100%, 97%); /* #f0f6ff */
+  --Alabaster: hsl(231, 100%, 99%); /* #fafcff */
+  --White: hsl(0, 0%, 100%); /* #ffffff */
+}
+
+body {
+  background-color: var(--Magnolia);
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mainOuterDiv {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.mobileTopBar {
+  display: none;
+}
+
+.mainContainer {
+  background-color: var(--White);
+  border-radius: 15px;
+  width: 940px;
+  height: 568px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 18px;
+}
+
+.desktopSideBar {
+  height: 100%;
+  width: 100%;
+  max-height: 568px;
+  max-width: 275px;
+  background-image: url("bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+}
+
+.desktopSideBarContainer {
+  color: var(--White);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.step1Container,
+.step2Container,
+.step3Container,
+.step4Container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+  margin-top: 30px;
+}
+
+.numberCircle {
+  border: 1px var(--White) solid;
+  border-radius: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.numberCircle.active {
+  background-color: var(--Light-blue);
+  border: 1px var(--Light-blue) solid;
+  color: var(--Marine-blue);
+}
+
+.desktopSideBarTextContainer {
+  margin-left: 10px;
+}
+
+.desktopSideBarHeader {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--White);
+  opacity: 50%;
+  font-size: 12px;
+}
+
+.desktopSideBarText {
+  margin: 0;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: var(--White);
+}
+
+.mainContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.personalInfoContainer {
+  padding: 40px 80px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.step1Header {
+  color: var(--Marine-blue);
+  margin: 0;
+}
+
+.step1SubText {
+  color: var(--Cool-gray);
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.name-label,
+.email-label,
+.phone-label {
+  margin-top: 25px;
+  color: var(--Marine-blue);
+}
+
+.name-input,
+.email-input,
+.phone-input {
+  margin-top: 10px;
+  background-color: transparent;
+  border: 1px solid var(--Light-gray);
+  border-radius: 10px;
+  height: 48px;
+  padding-left: 15px;
+}
+
+.desktopNextStepBtn,
+.mobileNextStepBtn {
+  margin-top: 90px;
+  margin-left: auto;
+  height: 48px;
+  width: 125px;
+  color: var(--Magnolia);
+  background-color: var(--Marine-blue);
+  border: 1px solid var(--Marine-blue);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.desktopNextStepBtn:hover,
+.mobileNextStepBtn:active {
+  background-color: transparent;
+  color: var(--Marine-blue);
+}
+
+.mobileBottomBar {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .mobileTopBar {
+    display: block;
+    position: fixed;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    background-image: url("bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+  }
+
+  .mobileTopBarContainer {
+    display: flex;
+    justify-content: center;
+    margin: 40px 100px;
+    color: var(--White);
+  }
+
+  .numberCircle:first-of-type {
+    margin-left: 0;
+  }
+
+  .numberCircle {
+    margin-left: 3vw;
+    border-radius: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .mainContainer {
+    margin-left: 4%;
+    margin-right: 4%;
+    position: fixed;
+    width: 92%;
+    border-radius: 10px;
+    padding: 0px;
+    height: 395px;
+    z-index: 1;
+    margin-top: 15vh;
+  }
+
+  .personalInfoContainer {
+    padding: 40px 25px 30px 25px;
+  }
+
+  .desktopSideBar {
+    display: none;
+  }
+
+  .step1Header {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .name-label,
+  .email-label,
+  .phone-label {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  .name-input,
+  .email-input,
+  .phone-input {
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+
+  .desktopNextStepBtn {
+    display: none;
+  }
+
+  .mobileBottomBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 70px;
+    background-color: var(--White);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 15px;
+    margin-right: 15px;
+  }
+
+  .mobileNextStepBtn {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 30px;
+    font-size: 14px;
+  }
+}
