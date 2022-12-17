@@ -1,28 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Step2 = () => {
   return (
     <>
       <div className="mobileTopBar">
         <div className="mobileTopBarContainer">
-          <span className="numberCircle active">1</span>
-          <span className="numberCircle ">2</span>
-          <span className="numberCircle ">3</span>
-          <span className="numberCircle ">4</span>
+          <span className="numberCircle">1</span>
+          <span className="numberCircle active">2</span>
+          <span className="numberCircle">3</span>
+          <span className="numberCircle">4</span>
         </div>
       </div>
       <div className="mainContainer">
         <div className="desktopSideBar">
           <div className="desktopSideBarContainer">
             <div className="step1Container">
-              <span className="numberCircle active">1</span>
+              <span className="numberCircle">1</span>
               <div className="desktopSideBarTextContainer">
                 <p className="desktopSideBarHeader">step 1</p>
                 <p className="desktopSideBarText">your info</p>
               </div>
             </div>
             <div className="step2Container">
-              <span className="numberCircle">2</span>
+              <span className="numberCircle active">2</span>
               <div className="desktopSideBarTextContainer">
                 <p className="desktopSideBarHeader">step 2</p>
                 <p className="desktopSideBarText">select plan</p>
@@ -46,7 +47,7 @@ const Step2 = () => {
         </div>
         <div className="mainContent">
           <div className="personalInfoContainer">
-            <h1 className="step1Header">Personal info</h1>
+            <h1 className="step1Header">Select your plan</h1>
             <p className="step1SubText">
               Please provide your name, email address, and phone number.
             </p>
@@ -82,12 +83,24 @@ const Step2 = () => {
               placeholder="e.g. +44 0123 456 789"
             ></input>
 
-            <button className="desktopNextStepBtn">Next Step</button>
+            <div className="desktopBtnContainer">
+              <Link to="/">
+                <button className="desktopBackBtn">Go Back</button>
+              </Link>
+              <Link to="/add-ons">
+                <button className="desktopNextStepBtn">Next Step</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
       <div className="mobileBottomBar">
-        <button className=" mobileNextStepBtn">Next Step</button>
+        <Link to="/">
+          <button className="mobileBackBtn">Go Back</button>
+        </Link>
+        <Link to="/add-ons">
+          <button className="mobileNextStepBtn">Next Step</button>
+        </Link>
       </div>
     </>
   );

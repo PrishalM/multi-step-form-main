@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Step1 = () => {
   return (
@@ -6,9 +7,9 @@ const Step1 = () => {
       <div className="mobileTopBar">
         <div className="mobileTopBarContainer">
           <span className="numberCircle active">1</span>
-          <span className="numberCircle ">2</span>
-          <span className="numberCircle ">3</span>
-          <span className="numberCircle ">4</span>
+          <span className="numberCircle">2</span>
+          <span className="numberCircle">3</span>
+          <span className="numberCircle">4</span>
         </div>
       </div>
       <div className="mainContainer">
@@ -81,13 +82,20 @@ const Step1 = () => {
               type="text"
               placeholder="e.g. +44 0123 456 789"
             ></input>
-
-            <button className="desktopNextStepBtn">Next Step</button>
+            <div className="desktopBtnContainer">
+              <span></span>
+              <Link to="/select-plan">
+                <button className="desktopNextStepBtn">Next Step</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
       <div className="mobileBottomBar">
-        <button className=" mobileNextStepBtn">Next Step</button>
+        <span></span>
+        <Link to="/select-plan">
+          <button className="mobileNextStepBtn">Next Step</button>
+        </Link>
       </div>
     </>
   );

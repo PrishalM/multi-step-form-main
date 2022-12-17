@@ -1,12 +1,12 @@
 import React from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Step1, Step2, Step3, Step4, Step5 } from "./pages";
 
 function App() {
   return (
     <div className="mainOuterDiv">
-      <Step1 />
-      {/* <BrowserRouter>
+      {/* <Step1 /> */}
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Step1 />} />
           <Route path="/select-plan" element={<Step2 />} />
@@ -14,7 +14,7 @@ function App() {
           <Route path="/summary" element={<Step4 />} />
           <Route path="/thank-you" element={<Step5 />} />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
