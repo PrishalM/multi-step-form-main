@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { ReactComponent as ArcadeIcon } from "./icon-arcade.svg";
+import { ReactComponent as AdvancedIcon } from "./icon-advanced.svg";
+import { ReactComponent as ProIcon } from "./icon-pro.svg";
+
 const Step2 = () => {
   return (
     <>
@@ -46,42 +50,55 @@ const Step2 = () => {
           </div>
         </div>
         <div className="mainContent">
-          <div className="personalInfoContainer">
-            <h1 className="step1Header">Select your plan</h1>
-            <p className="step1SubText">
-              Please provide your name, email address, and phone number.
+          <div className="selectPlanContainer">
+            <h1 className="stepHeader">Select your plan</h1>
+            <p className="stepSubText">
+              You have the option of monthly or yearly billing.
             </p>
 
-            <label className="name-label" for="name-input">
-              Name
-            </label>
-            <input
-              required
-              id="name-input"
-              className="name-input"
-              type="text"
-              placeholder="e.g. Stephen King"
-            ></input>
-            <label className="email-label" for="email-input">
-              Email Address
-            </label>
-            <input
-              required
-              id="email-input"
-              className="email-input"
-              type="text"
-              placeholder="e.g. stephenking@lorem.com"
-            ></input>
-            <label className="phone-label" for="phone-input">
-              Phone Number
-            </label>
-            <input
-              required
-              id="phone-input"
-              className="phone-input"
-              type="text"
-              placeholder="e.g. +44 0123 456 789"
-            ></input>
+            <div className="billingOptionContainer">
+              <div className="billingOption arcade active">
+                <div className="iconContainer">
+                  <ArcadeIcon />
+                </div>
+                <div className="billingOptionTextContainer">
+                  <p className="billingOptionName">Arcade</p>
+                  <p className="billingOptionMonthlyPrice">£9/mo</p>
+                  <p className="billingOptionYearlyPrice hide">£90/yr</p>
+                  <p className="yearlyPriceDiscount hide">2 months free</p>
+                </div>
+              </div>
+              <div className="billingOption advanced">
+                <div className="iconContainer">
+                  <AdvancedIcon />
+                </div>
+                <div className="billingOptionTextContainer">
+                  <p className="billingOptionName">Advanced</p>
+                  <p className="billingOptionMonthlyPrice">£12/mo</p>
+                  <p className="billingOptionYearlyPrice hide">£120/yr</p>
+                  <p className="yearlyPriceDiscount hide">2 months free</p>
+                </div>
+              </div>
+              <div className="billingOption pro">
+                <div className="iconContainer">
+                  <ProIcon />
+                </div>
+                <div className="billingOptionTextContainer">
+                  <p className="billingOptionName">Pro</p>
+                  <p className="billingOptionMonthlyPrice">£15/mo</p>
+                  <p className="billingOptionYearlyPrice hide">£150/yr</p>
+                  <p className="yearlyPriceDiscount hide">2 months free</p>
+                </div>
+              </div>
+            </div>
+            <div className="billingTypeContainer">
+              <p className="billingTypeMonthly active">Monthly</p>
+              <label className="switch">
+                <input type="checkbox" />
+                <span className="slider round"></span>
+              </label>
+              <p className="billingTypeYearly">Yearly</p>
+            </div>
 
             <div className="desktopBtnContainer">
               <Link to="/">

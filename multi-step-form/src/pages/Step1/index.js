@@ -47,12 +47,12 @@ const Step1 = () => {
         </div>
         <div className="mainContent">
           <div className="personalInfoContainer">
-            <h1 className="step1Header">Personal info</h1>
-            <p className="step1SubText">
+            <h1 className="stepHeader">Personal info</h1>
+            <p className="stepSubText">
               Please provide your name, email address, and phone number.
             </p>
 
-            <label className="name-label" for="name-input">
+            <label className="name-label" htmlFor="name-input">
               Name
             </label>
             <input
@@ -62,7 +62,7 @@ const Step1 = () => {
               type="text"
               placeholder="e.g. Stephen King"
             ></input>
-            <label className="email-label" for="email-input">
+            <label className="email-label" htmlFor="email-input">
               Email Address
             </label>
             <input
@@ -72,7 +72,7 @@ const Step1 = () => {
               type="text"
               placeholder="e.g. stephenking@lorem.com"
             ></input>
-            <label className="phone-label" for="phone-input">
+            <label className="phone-label" htmlFor="phone-input">
               Phone Number
             </label>
             <input

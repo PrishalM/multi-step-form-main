@@ -46,48 +46,74 @@ const Step3 = () => {
           </div>
         </div>
         <div className="mainContent">
-          <div className="personalInfoContainer">
-            <h1 className="step1Header">Pick add-ons</h1>
-            <p className="step1SubText">
-              Please provide your name, email address, and phone number.
+          <div className="addOnsContainer">
+            <h1 className="stepHeader">Pick add-ons</h1>
+            <p className="stepSubText">
+              Add-ons help enhance your gaming experience.
             </p>
 
-            <label className="name-label" for="name-input">
-              Name
-            </label>
-            <input
-              required
-              id="name-input"
-              className="name-input"
-              type="text"
-              placeholder="e.g. Stephen King"
-            ></input>
-            <label className="email-label" for="email-input">
-              Email Address
-            </label>
-            <input
-              required
-              id="email-input"
-              className="email-input"
-              type="text"
-              placeholder="e.g. stephenking@lorem.com"
-            ></input>
-            <label className="phone-label" for="phone-input">
-              Phone Number
-            </label>
-            <input
-              required
-              id="phone-input"
-              className="phone-input"
-              type="text"
-              placeholder="e.g. +44 0123 456 789"
-            ></input>
+            <div className="addOnOptionContainer">
+              <label
+                className="addOn onlineService active"
+                htmlFor="onlineServiceCheckbox"
+              >
+                <div className="checkboxContainer">
+                  <input
+                    type="checkbox"
+                    id="onlineServiceCheckbox"
+                    className="checkbox"
+                  ></input>
+                </div>
+                <div className="addOnTextContainer">
+                  <p className="addOnName">Online service</p>
+                  <p className="addOnSubText">Access to multiplayer games</p>
+                </div>
+                <p className="addOnMonthlyPrice">+£1/mo</p>
+                <p className="addOnYearlyPrice hide">+£10/yr</p>
+              </label>
+              <label
+                htmlFor="largerStorageCheckbox"
+                className="addOn largerStorage "
+              >
+                <div className="checkboxContainer">
+                  <input
+                    type="checkbox"
+                    id="largerStorageCheckbox"
+                    className="checkbox"
+                  ></input>
+                </div>
+                <div className="addOnTextContainer">
+                  <p className="addOnName">Larger storage</p>
+                  <p className="addOnSubText">Extra 1TB cloud save</p>
+                </div>
+                <p className="addOnMonthlyPrice">+£2/mo</p>
+                <p className="addOnYearlyPrice hide">+£20/yr</p>
+              </label>
+              <label
+                htmlFor="customisableProfileCheckbox"
+                className="addOn customisableProfile "
+              >
+                <div className="checkboxContainer">
+                  <input
+                    type="checkbox"
+                    id="customisableProfileCheckbox"
+                    className="checkbox"
+                  ></input>
+                </div>
+                <div className="addOnTextContainer">
+                  <p className="addOnName">Customisable profile</p>
+                  <p className="addOnSubText">Custom theme on your profile</p>
+                </div>
+                <p className="addOnMonthlyPrice">+£2/mo</p>
+                <p className="addOnYearlyPrice hide">+£20/yr</p>
+              </label>
+            </div>
 
             <div className="desktopBtnContainer">
-              <Link to="/select-plan">
+              <Link to="/">
                 <button className="desktopBackBtn">Go Back</button>
               </Link>
-              <Link to="/summary">
+              <Link to="/add-ons">
                 <button className="desktopNextStepBtn">Next Step</button>
               </Link>
             </div>

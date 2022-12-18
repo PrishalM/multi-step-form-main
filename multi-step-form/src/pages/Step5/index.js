@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Step5 = () => {
   return (
@@ -47,8 +46,8 @@ const Step5 = () => {
         </div>
         <div className="mainContent">
           <div className="personalInfoContainer">
-            <h1 className="step1Header">Thank you</h1>
-            <p className="step1SubText">
+            <h1 className="stepHeader">Thank you</h1>
+            <p className="stepSubText">
               Please provide your name, email address, and phone number.
             </p>
 

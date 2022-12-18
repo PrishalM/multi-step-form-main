@@ -47,8 +47,8 @@ const Step4 = () => {
         </div>
         <div className="mainContent">
           <div className="personalInfoContainer">
-            <h1 className="step1Header">Finishing up </h1>
-            <p className="step1SubText">
+            <h1 className="stepHeader">Finishing up </h1>
+            <p className="stepSubText">
               Please provide your name, email address, and phone number.
             </p>
 
