@@ -127,12 +127,13 @@ body {
 .stepSubText {
   color: var(--Cool-gray);
   margin-bottom: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .personalInfoContainer,
 .selectPlanContainer,
-.addOnsContainer {
+.addOnsContainer,
+.summaryContainer {
   padding: 40px 80px 20px 80px;
   display: flex;
   flex-direction: column;
@@ -140,6 +141,7 @@ body {
   width: 100%;
 }
 
+/******************************************/
 /* Step1 Page */
 .name-label,
 .email-label,
@@ -159,6 +161,13 @@ body {
   padding-left: 15px;
 }
 
+.name-input:focus-visible,
+.email-input:focus-visible,
+.phone-input:focus-visible {
+  outline: 1px solid var(--Purplish-blue);
+}
+
+/******************************************/
 /* Step2 Page */
 .billingOptionContainer {
   display: flex;
@@ -183,8 +192,12 @@ body {
   cursor: pointer;
 }
 
+.billingOption:hover {
+  border: 1px solid var(--Purplish-blue);
+}
+
 .billingOption.active {
-  border: 1px solid var(--Marine-blue);
+  border: 1px solid var(--Purplish-blue);
   background-color: var(--Alabaster);
 }
 
@@ -305,6 +318,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/******************************************/
 /* Step3 Page */
 .addOnOptionContainer {
   display: flex;
@@ -328,8 +342,12 @@ input:checked + .slider:before {
   align-items: center;
 }
 
+.addOn:hover {
+  border: 1px solid var(--Purplish-blue);
+}
+
 .addOn.active {
-  border: 1px solid var(--Marine-blue);
+  border: 1px solid var(--Purplish-blue);
   background-color: var(--Alabaster);
 }
 
@@ -340,6 +358,10 @@ input:checked + .slider:before {
 .checkbox {
   width: 20px;
   height: 20px;
+}
+
+.checkbox:checked {
+  accent-color: var(--Purplish-blue);
 }
 
 .addOnTextContainer {
@@ -365,12 +387,125 @@ input:checked + .slider:before {
 
 .addOnMonthlyPrice,
 .addOnYearlyPrice {
-  color: var(--Marine-blue);
+  color: var(--Purplish-blue);
 }
 
+/******************************************/
 /* Step4 Page */
+.summaryContentContainer {
+  background-color: hsl(228, 100%, 84%, 8%);
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 40px;
+}
 
+.summaryPlanType,
+.summaryAddOn,
+.summaryTotalContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summaryPlanTypeName {
+  color: var(--Marine-blue);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.summaryPlanTypeChange {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--Cool-gray);
+  margin: 0;
+}
+
+.summaryPlanTypeChange:hover {
+  color: var(--Purplish-blue);
+}
+
+.summaryPlanTypePrice {
+  color: var(--Marine-blue);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.summaryLine {
+  height: 1px;
+  background-color: var(--Light-gray);
+  margin: 25px 0;
+}
+
+.summaryAddOn {
+  padding-bottom: 20px;
+}
+
+.summaryAddOn:last-of-type {
+  padding: 0;
+}
+
+.summaryAddOnName {
+  font-size: 14px;
+  color: var(--Cool-gray);
+  margin: 0;
+}
+
+.summaryAddOnPrice {
+  color: var(--Marine-blue);
+  margin: 0;
+}
+
+.summaryTotalContainer {
+  padding: 30px 25px;
+}
+
+.summaryTotalText {
+  font-size: 14px;
+  color: var(--Cool-gray);
+  margin: 0;
+}
+
+.summaryTotalPrice {
+  color: var(--Purplish-blue);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/******************************************/
 /* Step5 Page */
+.thankYouContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 80px 20px 80px;
+}
+
+.thankYouContainer a {
+  cursor: default;
+}
+
+.thankYouStepHeader {
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--Marine-blue);
+  margin: 35px 0 20px 0;
+}
+
+.thankYouStepSubText {
+  text-align: center;
+  color: var(--Cool-gray);
+  margin: 0;
+  line-height: 24px;
+}
+
+/******************************************/
 
 .desktopBtnContainer {
   margin-top: auto;
@@ -378,36 +513,90 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
-.desktopBackBtn {
+.desktopBackBtn,
+.mobileBackBtn {
   background-color: transparent;
   border: none;
   font-size: 16px;
   color: var(--Cool-gray);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.desktopBackBtn:hover,
+.mobileBackBtn:hover {
+  color: var(--Marine-blue);
+}
+
+.desktopBackBtn {
+  font-size: 16px;
+}
+
+.mobileBackBtn {
+  font-size: 14px;
+}
+
+.mobileNextStepBtn,
+.mobileConfirmBtn {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 30px;
+  font-size: 14px;
 }
 
 .desktopNextStepBtn,
-.mobileNextStepBtn {
-  height: 48px;
-  width: 125px;
-  color: var(--Magnolia);
-  background-color: var(--Marine-blue);
-  border: 1px solid var(--Marine-blue);
+.mobileNextStepBtn,
+.desktopConfirmBtn,
+.mobileConfirmBtn {
+  color: var(--White);
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
 }
 
+.desktopNextStepBtn,
+.mobileNextStepBtn {
+  background-color: var(--Marine-blue);
+  border: 1px solid var(--Marine-blue);
+}
+
 .desktopNextStepBtn:hover,
-.mobileNextStepBtn:active {
-  background-color: transparent;
-  color: var(--Marine-blue);
+.mobileNextStepBtn:hover {
+  background-color: hsl(213, 96%, 18%, 85%);
+  border: 1px solid hsl(213, 96%, 18%, 85%);
+}
+
+.desktopConfirmBtn,
+.mobileConfirmBtn {
+  background-color: var(--Purplish-blue);
+  border: 1px solid var(--Purplish-blue);
+}
+
+.desktopConfirmBtn:hover,
+.mobileConfirmBtn:hover {
+  background-color: hsl(243, 100%, 62%, 60%);
+  border: 1px solid hsl(243, 100%, 62%, 60%);
+}
+
+.desktopNextStepBtn,
+.desktopConfirmBtn {
+  height: 48px;
+  width: 125px;
+}
+
+.mobileNextStepBtn,
+.mobileConfirmBtn {
+  height: 40px;
+  padding: 0 15px;
 }
 
 .mobileBottomBar {
   display: none;
 }
 
+/******************************************/
 @media screen and (max-width: 992px) {
   .mobileTopBar {
     display: block;
@@ -460,10 +649,12 @@ input:checked + .slider:before {
 
   .personalInfoContainer,
   .selectPlanContainer,
-  .addOnsContainer {
+  .addOnsContainer,
+  .summaryContainer {
     padding: 40px 25px 30px 25px;
   }
 
+  /******************************************/
   /* Step1 Page */
   .name-label,
   .email-label,
@@ -480,6 +671,7 @@ input:checked + .slider:before {
     margin-top: 5px;
   }
 
+  /******************************************/
   /* Step2 Page */
   .selectPlanContainer {
     display: block;
@@ -516,8 +708,8 @@ input:checked + .slider:before {
     margin: 0 15px auto 0;
   }
 
+  /******************************************/
   /* Step3 Page */
-
   .checkboxContainer {
     margin: 5px 15px 5px 0;
   }
@@ -531,9 +723,48 @@ input:checked + .slider:before {
     font-size: 12px;
   }
 
+  /******************************************/
   /* Step4 Page */
+  .summaryPlanTypeName,
+  .summaryPlanTypePrice,
+  .summaryAddOnPrice {
+    font-size: 14px;
+  }
 
+  .summaryTotalPrice {
+    font-size: 16px;
+  }
+
+  .summaryContentContainer {
+    margin-top: 10px;
+    padding: 20px 15px;
+  }
+
+  .summaryLine {
+    margin: 15px 0;
+  }
+
+  .summaryTotalContainer {
+    padding: 30px 15px 0;
+  }
+
+  /******************************************/
   /* Step5 Page */
+
+  .thankYouContainer {
+    padding: 60px 25px 80px;
+  }
+
+  .thankYouContainer svg {
+    transform: scale(0.7);
+  }
+
+  .thankYouStepHeader {
+    font-size: 24px;
+    margin: 15px 0 15px 0;
+  }
+
+  /******************************************/
 
   .desktopBtnContainer {
     display: none;
@@ -553,23 +784,13 @@ input:checked + .slider:before {
     z-index: 1;
     border-top: 1px solid var(--Magnolia);
   }
-
-  .mobileBackBtn {
-    background-color: transparent;
-    font-size: 14px;
-    color: var(--Cool-gray);
-    border: none;
-  }
-
-  .mobileNextStepBtn {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 30px;
-    font-size: 14px;
-  }
 }
 
+/******************************************/
 .hide {
   display: none;
+}
+
+a {
+  text-decoration: none;
 }

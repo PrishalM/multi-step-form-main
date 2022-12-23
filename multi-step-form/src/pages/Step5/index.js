@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import { ReactComponent as ThankYouIcon } from "./icon-thank-you.svg";
 
 const Step5 = () => {
   return (
@@ -45,42 +48,16 @@ const Step5 = () => {
           </div>
         </div>
         <div className="mainContent">
-          <div className="personalInfoContainer">
-            <h1 className="stepHeader">Thank you</h1>
-            <p className="stepSubText">
-              Please provide your name, email address, and phone number.
+          <div className="thankYouContainer">
+            <Link to="/">
+              <ThankYouIcon />
+            </Link>
+            <h1 className="thankYouStepHeader">Thank you!</h1>
+            <p className="thankYouStepSubText">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
             </p>
-
-            <label className="name-label" for="name-input">
-              Name
-            </label>
-            <input
-              required
-              id="name-input"
-              className="name-input"
-              type="text"
-              placeholder="e.g. Stephen King"
-            ></input>
-            <label className="email-label" for="email-input">
-              Email Address
-            </label>
-            <input
-              required
-              id="email-input"
-              className="email-input"
-              type="text"
-              placeholder="e.g. stephenking@lorem.com"
-            ></input>
-            <label className="phone-label" for="phone-input">
-              Phone Number
-            </label>
-            <input
-              required
-              id="phone-input"
-              className="phone-input"
-              type="text"
-              placeholder="e.g. +44 0123 456 789"
-            ></input>
           </div>
         </div>
       </div>

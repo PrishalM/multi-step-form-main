@@ -73,7 +73,7 @@ const Step3 = () => {
               </label>
               <label
                 htmlFor="largerStorageCheckbox"
-                className="addOn largerStorage "
+                className="addOn largerStorage"
               >
                 <div className="checkboxContainer">
                   <input
@@ -110,10 +110,10 @@ const Step3 = () => {
             </div>
 
             <div className="desktopBtnContainer">
-              <Link to="/">
+              <Link to="/select-plan">
                 <button className="desktopBackBtn">Go Back</button>
               </Link>
-              <Link to="/add-ons">
+              <Link to="/summary">
                 <button className="desktopNextStepBtn">Next Step</button>
               </Link>
             </div>

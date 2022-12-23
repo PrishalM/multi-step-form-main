@@ -46,49 +46,40 @@ const Step4 = () => {
           </div>
         </div>
         <div className="mainContent">
-          <div className="personalInfoContainer">
+          <div className="summaryContainer">
             <h1 className="stepHeader">Finishing up </h1>
             <p className="stepSubText">
-              Please provide your name, email address, and phone number.
+              Double-check everything looks OK before confirming.
             </p>
-
-            <label className="name-label" for="name-input">
-              Name
-            </label>
-            <input
-              required
-              id="name-input"
-              className="name-input"
-              type="text"
-              placeholder="e.g. Stephen King"
-            ></input>
-            <label className="email-label" for="email-input">
-              Email Address
-            </label>
-            <input
-              required
-              id="email-input"
-              className="email-input"
-              type="text"
-              placeholder="e.g. stephenking@lorem.com"
-            ></input>
-            <label className="phone-label" for="phone-input">
-              Phone Number
-            </label>
-            <input
-              required
-              id="phone-input"
-              className="phone-input"
-              type="text"
-              placeholder="e.g. +44 0123 456 789"
-            ></input>
-
+            <div className="summaryContentContainer">
+              <div className="summaryPlanType">
+                <div className="">
+                  <p className="summaryPlanTypeName">Arcade (Monthly)</p>
+                  <p className="summaryPlanTypeChange">Change</p>
+                </div>
+                <p className="summaryPlanTypePrice">£9/mo</p>
+              </div>
+              <div className="summaryLine"></div>
+              <div className="summaryAddOn">
+                <p className="summaryAddOnName">Online service</p>
+                <p className="summaryAddOnPrice">+£1/mo</p>
+              </div>
+              <div className="summaryAddOn">
+                <p className="summaryAddOnName">Larger storage</p>
+                <p className="summaryAddOnPrice">+£2/mo</p>
+              </div>
+            </div>
+            <div className="summaryTotalContainer">
+              <p className="summaryTotalText">Total (per year)</p>
+              <p className="summaryTotalPrice">£12/mo</p>
+            </div>
+            <div className=""></div>
             <div className="desktopBtnContainer">
-              <Link to="/summary">
+              <Link to="/add-ons">
                 <button className="desktopBackBtn">Go Back</button>
               </Link>
               <Link to="/thank-you">
-                <button className="desktopNextStepBtn">Next Step</button>
+                <button className="desktopConfirmBtn">Confirm</button>
               </Link>
             </div>
           </div>
@@ -99,7 +90,7 @@ const Step4 = () => {
           <button className="mobileBackBtn">Go Back</button>
         </Link>
         <Link to="/thank-you">
-          <button className="mobileNextStepBtn">Next Step</button>
+          <button className="mobileConfirmBtn">Confirm</button>
         </Link>
       </div>
     </>
