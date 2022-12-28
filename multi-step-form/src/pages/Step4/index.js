@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectBillingType } from "../../reducers/billingTypeSlice";
 import { selectBillingOption } from "../../reducers/billingOptionSlice";
-import {
-  selectOnlineService,
-  selectLargerStorage,
-  selectCustomisableProfile,
-} from "../../reducers/addOnsSlice";
+// import {
+//   selectOnlineService,
+//   selectLargerStorage,
+//   selectCustomisableProfile,
+// } from "../../reducers/addOnsSlice";
 
 const Step4 = () => {
   // const dispatch = useDispatch();
