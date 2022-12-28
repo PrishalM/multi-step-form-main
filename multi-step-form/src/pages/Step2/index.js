@@ -1,11 +1,176 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
+import {
+  saveBillingOption,
+  selectBillingOption,
+} from "../../reducers/billingOptionSlice";
+import {
+  saveBillingType,
+  selectBillingType,
+} from "../../reducers/billingTypeSlice";
 
 import { ReactComponent as ArcadeIcon } from "./icon-arcade.svg";
 import { ReactComponent as AdvancedIcon } from "./icon-advanced.svg";
 import { ReactComponent as ProIcon } from "./icon-pro.svg";
 
 const Step2 = () => {
+  const dispatch = useDispatch();
+  const billingType = useSelector(selectBillingType);
+  const billingOption = useSelector(selectBillingOption);
+
+  const arcadeBillingOption = useRef();
+  const advancedBillingOption = useRef();
+  const proBillingOption = useRef();
+
+  const arcadeMonthlyPrice = useRef();
+  const arcadeYearlyPrice = useRef();
+  const arcadeYearlyDiscount = useRef();
+
+  const advancedMonthlyPrice = useRef();
+  const advancedYearlyPrice = useRef();
+  const advancedYearlyDiscount = useRef();
+
+  const proMonthlyPrice = useRef();
+  const proYearlyPrice = useRef();
+  const proYearlyDiscount = useRef();
+
+  const billingTypeTextMonthly = useRef();
+  const billingTypeTextYearly = useRef();
+
+  const billingTypeInput = useRef();
+  const billingTypeSpan = useRef();
+
+  useEffect(() => {
+    if (billingType === "yearly") {
+      let input = billingTypeInput.current;
+      input.checked = true;
+
+      let arcadeMPrice = arcadeMonthlyPrice.current;
+      let arcadeYPrice = arcadeYearlyPrice.current;
+      let arcadeYDiscount = arcadeYearlyDiscount.current;
+
+      let advancedMPrice = advancedMonthlyPrice.current;
+      let advancedYPrice = advancedYearlyPrice.current;
+      let advancedYDiscount = advancedYearlyDiscount.current;
+
+      let proMPrice = proMonthlyPrice.current;
+      let proYPrice = proYearlyPrice.current;
+      let proYDiscount = proYearlyDiscount.current;
+
+      let monthlyText = billingTypeTextMonthly.current;
+      let yearlyText = billingTypeTextYearly.current;
+
+      arcadeMPrice.classList.add("hide");
+      arcadeYPrice.classList.remove("hide");
+      arcadeYDiscount.classList.remove("hide");
+
+      advancedMPrice.classList.add("hide");
+      advancedYPrice.classList.remove("hide");
+      advancedYDiscount.classList.remove("hide");
+
+      proMPrice.classList.add("hide");
+      proYPrice.classList.remove("hide");
+      proYDiscount.classList.remove("hide");
+
+      monthlyText.classList.remove("active");
+      yearlyText.classList.add("active");
+    }
+    if (billingOption === "arcade") {
+      let arcade = arcadeBillingOption.current;
+      let advanced = advancedBillingOption.current;
+      let pro = proBillingOption.current;
+      arcade.classList.add("active");
+      advanced.classList.remove("active");
+      pro.classList.remove("active");
+    } else if (billingOption === "advanced") {
+      let arcade = arcadeBillingOption.current;
+      let advanced = advancedBillingOption.current;
+      let pro = proBillingOption.current;
+      arcade.classList.remove("active");
+      advanced.classList.add("active");
+      pro.classList.remove("active");
+    } else if (billingOption === "pro") {
+      let arcade = arcadeBillingOption.current;
+      let advanced = advancedBillingOption.current;
+      let pro = proBillingOption.current;
+      arcade.classList.remove("active");
+      advanced.classList.remove("active");
+      pro.classList.add("active");
+    }
+  }, []);
+
+  const selectArcadeBillingOption = () => {
+    let arcade = arcadeBillingOption.current;
+    let advanced = advancedBillingOption.current;
+    let pro = proBillingOption.current;
+    arcade.classList.add("active");
+    advanced.classList.remove("active");
+    pro.classList.remove("active");
+
+    dispatch(saveBillingOption("arcade"));
+  };
+
+  const selectAdvancedBillingOption = () => {
+    let arcade = arcadeBillingOption.current;
+    let advanced = advancedBillingOption.current;
+    let pro = proBillingOption.current;
+    arcade.classList.remove("active");
+    advanced.classList.add("active");
+    pro.classList.remove("active");
+
+    dispatch(saveBillingOption("advanced"));
+  };
+
+  const selectProBillingOption = () => {
+    let arcade = arcadeBillingOption.current;
+    let advanced = advancedBillingOption.current;
+    let pro = proBillingOption.current;
+    arcade.classList.remove("active");
+    advanced.classList.remove("active");
+    pro.classList.add("active");
+
+    dispatch(saveBillingOption("pro"));
+  };
+
+  const toggleBillingType = () => {
+    let arcadeMPrice = arcadeMonthlyPrice.current;
+    let arcadeYPrice = arcadeYearlyPrice.current;
+    let arcadeYDiscount = arcadeYearlyDiscount.current;
+
+    let advancedMPrice = advancedMonthlyPrice.current;
+    let advancedYPrice = advancedYearlyPrice.current;
+    let advancedYDiscount = advancedYearlyDiscount.current;
+
+    let proMPrice = proMonthlyPrice.current;
+    let proYPrice = proYearlyPrice.current;
+    let proYDiscount = proYearlyDiscount.current;
+
+    let monthlyText = billingTypeTextMonthly.current;
+    let yearlyText = billingTypeTextYearly.current;
+
+    arcadeMPrice.classList.toggle("hide");
+    arcadeYPrice.classList.toggle("hide");
+    arcadeYDiscount.classList.toggle("hide");
+
+    advancedMPrice.classList.toggle("hide");
+    advancedYPrice.classList.toggle("hide");
+    advancedYDiscount.classList.toggle("hide");
+
+    proMPrice.classList.toggle("hide");
+    proYPrice.classList.toggle("hide");
+    proYDiscount.classList.toggle("hide");
+
+    monthlyText.classList.toggle("active");
+    yearlyText.classList.toggle("active");
+    if (billingType === "monthly") {
+      dispatch(saveBillingType("yearly"));
+    } else if (billingType === "yearly") {
+      dispatch(saveBillingType("monthly"));
+    }
+  };
+
   return (
     <>
       <div className="mobileTopBar">
@@ -57,47 +222,115 @@ const Step2 = () => {
             </p>
 
             <div className="billingOptionContainer">
-              <div className="billingOption arcade active">
+              <div
+                className="billingOption arcade"
+                ref={arcadeBillingOption}
+                onClick={selectArcadeBillingOption}
+              >
                 <div className="iconContainer">
                   <ArcadeIcon />
                 </div>
                 <div className="billingOptionTextContainer">
                   <p className="billingOptionName">Arcade</p>
-                  <p className="billingOptionMonthlyPrice">£9/mo</p>
-                  <p className="billingOptionYearlyPrice hide">£90/yr</p>
-                  <p className="yearlyPriceDiscount hide">2 months free</p>
+                  <p
+                    className="billingOptionMonthlyPrice"
+                    ref={arcadeMonthlyPrice}
+                  >
+                    £9/mo
+                  </p>
+                  <p
+                    className="billingOptionYearlyPrice hide"
+                    ref={arcadeYearlyPrice}
+                  >
+                    £90/yr
+                  </p>
+                  <p
+                    className="yearlyPriceDiscount hide"
+                    ref={arcadeYearlyDiscount}
+                  >
+                    2 months free
+                  </p>
                 </div>
               </div>
-              <div className="billingOption advanced">
+              <div
+                className="billingOption advanced"
+                ref={advancedBillingOption}
+                onClick={selectAdvancedBillingOption}
+              >
                 <div className="iconContainer">
                   <AdvancedIcon />
                 </div>
                 <div className="billingOptionTextContainer">
                   <p className="billingOptionName">Advanced</p>
-                  <p className="billingOptionMonthlyPrice">£12/mo</p>
-                  <p className="billingOptionYearlyPrice hide">£120/yr</p>
-                  <p className="yearlyPriceDiscount hide">2 months free</p>
+                  <p
+                    className="billingOptionMonthlyPrice"
+                    ref={advancedMonthlyPrice}
+                  >
+                    £12/mo
+                  </p>
+                  <p
+                    className="billingOptionYearlyPrice hide"
+                    ref={advancedYearlyPrice}
+                  >
+                    £120/yr
+                  </p>
+                  <p
+                    className="yearlyPriceDiscount hide"
+                    ref={advancedYearlyDiscount}
+                  >
+                    2 months free
+                  </p>
                 </div>
               </div>
-              <div className="billingOption pro">
+              <div
+                className="billingOption pro"
+                ref={proBillingOption}
+                onClick={selectProBillingOption}
+              >
                 <div className="iconContainer">
                   <ProIcon />
                 </div>
                 <div className="billingOptionTextContainer">
                   <p className="billingOptionName">Pro</p>
-                  <p className="billingOptionMonthlyPrice">£15/mo</p>
-                  <p className="billingOptionYearlyPrice hide">£150/yr</p>
-                  <p className="yearlyPriceDiscount hide">2 months free</p>
+                  <p
+                    className="billingOptionMonthlyPrice"
+                    ref={proMonthlyPrice}
+                  >
+                    £15/mo
+                  </p>
+                  <p
+                    className="billingOptionYearlyPrice hide"
+                    ref={proYearlyPrice}
+                  >
+                    £150/yr
+                  </p>
+                  <p
+                    className="yearlyPriceDiscount hide"
+                    ref={proYearlyDiscount}
+                  >
+                    2 months free
+                  </p>
                 </div>
               </div>
             </div>
             <div className="billingTypeContainer">
-              <p className="billingTypeMonthly active">Monthly</p>
+              <p
+                className="billingTypeMonthly active"
+                ref={billingTypeTextMonthly}
+              >
+                Monthly
+              </p>
               <label className="switch">
-                <input type="checkbox" />
-                <span className="slider round"></span>
+                <input type="checkbox" ref={billingTypeInput} />
+                <span
+                  className="slider round"
+                  onClick={toggleBillingType}
+                  ref={billingTypeSpan}
+                ></span>
               </label>
-              <p className="billingTypeYearly">Yearly</p>
+              <p className="billingTypeYearly" ref={billingTypeTextYearly}>
+                Yearly
+              </p>
             </div>
 
             <div className="desktopBtnContainer">

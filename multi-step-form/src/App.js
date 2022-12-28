@@ -5,7 +5,6 @@ import { Step1, Step2, Step3, Step4, Step5 } from "./pages";
 function App() {
   return (
     <div className="mainOuterDiv">
-      {/* <Step1 /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Step1 />} />

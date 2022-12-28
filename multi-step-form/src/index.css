@@ -414,6 +414,10 @@ input:checked + .slider:before {
   padding-bottom: 10px;
 }
 
+.summaryPlanTypeName::first-letter {
+  text-transform: capitalize;
+}
+
 .summaryPlanTypeChange {
   text-decoration: underline;
   cursor: pointer;

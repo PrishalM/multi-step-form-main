@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { useDispatch, useSelector } from "react-redux";
+import { selectBillingType } from "../../reducers/billingTypeSlice";
+import { selectBillingOption } from "../../reducers/billingOptionSlice";
+import {
+  selectOnlineService,
+  selectLargerStorage,
+  selectCustomisableProfile,
+} from "../../reducers/addOnsSlice";
+
 const Step4 = () => {
+  const dispatch = useDispatch();
+  const billingType = useSelector(selectBillingType);
+  const billingOption = useSelector(selectBillingOption);
+  const onlineService = useSelector(selectOnlineService);
+  const largerStorage = useSelector(selectLargerStorage);
+  const customisableProfile = useSelector(selectCustomisableProfile);
+
   return (
     <>
       <div className="mobileTopBar">
@@ -54,8 +70,12 @@ const Step4 = () => {
             <div className="summaryContentContainer">
               <div className="summaryPlanType">
                 <div className="">
-                  <p className="summaryPlanTypeName">Arcade (Monthly)</p>
-                  <p className="summaryPlanTypeChange">Change</p>
+                  <p className="summaryPlanTypeName">
+                    {billingOption} ({billingType})
+                  </p>
+                  <Link to="/select-plan">
+                    <p className="summaryPlanTypeChange">Change</p>
+                  </Link>
                 </div>
                 <p className="summaryPlanTypePrice">£9/mo</p>
               </div>

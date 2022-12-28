@@ -1,7 +1,18 @@
 import React from "react";
+
+import { saveName, selectName } from "../../reducers/nameSlice";
+import { saveEmail, selectEmail } from "../../reducers/emailSlice";
+import { savePhone, selectPhone } from "../../reducers/phoneSlice";
+
+import { useDispatch, useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 
 const Step1 = () => {
+  const dispatch = useDispatch();
+  const name = useSelector(selectName);
+  const email = useSelector(selectEmail);
+  const phone = useSelector(selectPhone);
   return (
     <>
       <div className="mobileTopBar">
@@ -61,6 +72,8 @@ const Step1 = () => {
               className="name-input"
               type="text"
               placeholder="e.g. Stephen King"
+              value={name}
+              onChange={(e) => dispatch(saveName(e.target.value))}
             ></input>
             <label className="email-label" htmlFor="email-input">
               Email Address
@@ -71,6 +84,8 @@ const Step1 = () => {
               className="email-input"
               type="text"
               placeholder="e.g. stephenking@lorem.com"
+              value={email}
+              onChange={(e) => dispatch(saveEmail(e.target.value))}
             ></input>
             <label className="phone-label" htmlFor="phone-input">
               Phone Number
@@ -81,11 +96,15 @@ const Step1 = () => {
               className="phone-input"
               type="text"
               placeholder="e.g. +44 0123 456 789"
+              value={phone}
+              onChange={(e) => dispatch(savePhone(e.target.value))}
             ></input>
             <div className="desktopBtnContainer">
               <span></span>
               <Link to="/select-plan">
-                <button className="desktopNextStepBtn">Next Step</button>
+                <button className="desktopNextStepBtn" type="submit">
+                  Next Step
+                </button>
               </Link>
             </div>
           </div>
@@ -94,7 +113,9 @@ const Step1 = () => {
       <div className="mobileBottomBar">
         <span></span>
         <Link to="/select-plan">
-          <button className="mobileNextStepBtn">Next Step</button>
+          <button className="mobileNextStepBtn" type="submit">
+            Next Step
+          </button>
         </Link>
       </div>
     </>
