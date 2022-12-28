@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+// import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -11,12 +11,12 @@ import {
 } from "../../reducers/addOnsSlice";
 
 const Step4 = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const billingType = useSelector(selectBillingType);
   const billingOption = useSelector(selectBillingOption);
-  const onlineService = useSelector(selectOnlineService);
-  const largerStorage = useSelector(selectLargerStorage);
-  const customisableProfile = useSelector(selectCustomisableProfile);
+  // const onlineService = useSelector(selectOnlineService);
+  // const largerStorage = useSelector(selectLargerStorage);
+  // const customisableProfile = useSelector(selectCustomisableProfile);
 
   return (
     <>
