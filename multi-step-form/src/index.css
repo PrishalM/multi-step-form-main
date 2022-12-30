@@ -143,11 +143,21 @@ body {
 
 /******************************************/
 /* Step1 Page */
+.label-error-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .name-label,
 .email-label,
 .phone-label {
   margin-top: 25px;
   color: var(--Marine-blue);
+}
+
+.error-message {
+  margin: 25px 0 0;
+  color: var(--Strawberry-red);
 }
 
 .name-input,
@@ -161,10 +171,24 @@ body {
   padding-left: 15px;
 }
 
+.name-input:hover,
+.email-input:hover,
+.phone-input:hover {
+  outline: 1px solid var(--Purplish-blue);
+  cursor: pointer;
+}
+
 .name-input:focus-visible,
 .email-input:focus-visible,
 .phone-input:focus-visible {
   outline: 1px solid var(--Purplish-blue);
+  cursor: text;
+}
+
+.name-input.error,
+.email-input.error,
+.phone-input.error {
+  outline: 1px solid var(--Strawberry-red);
 }
 
 /******************************************/
@@ -662,7 +686,8 @@ input:checked + .slider:before {
   /* Step1 Page */
   .name-label,
   .email-label,
-  .phone-label {
+  .phone-label,
+  .error-message {
     font-size: 12px;
     margin-top: 15px;
   }
