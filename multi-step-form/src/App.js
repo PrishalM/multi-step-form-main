@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Step1, Step2, Step3, Step4, Step5 } from "./pages";
+import { Step1, Step2, Step3, Step4, Step5, NotFoundPage } from "./pages";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
           <Route path="/add-ons" element={<Step3 />} />
           <Route path="/summary" element={<Step4 />} />
           <Route path="/thank-you" element={<Step5 />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
