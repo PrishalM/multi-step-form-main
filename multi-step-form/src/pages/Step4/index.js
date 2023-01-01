@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { selectBillingType } from "../../reducers/billingTypeSlice";
@@ -11,6 +12,7 @@ import {
 } from "../../reducers/addOnsSlice";
 
 const Step4 = () => {
+  const navigate = useNavigate();
   const billingType = useSelector(selectBillingType);
   const billingOption = useSelector(selectBillingOption);
   const onlineService = useSelector(selectOnlineService);

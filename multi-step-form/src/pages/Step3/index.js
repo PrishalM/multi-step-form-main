@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectBillingType } from "../../reducers/billingTypeSlice";
@@ -14,6 +15,7 @@ import {
 
 const Step3 = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const billingType = useSelector(selectBillingType);
   const onlineService = useSelector(selectOnlineService);
   const largerStorage = useSelector(selectLargerStorage);

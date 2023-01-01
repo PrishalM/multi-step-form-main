@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -17,6 +18,7 @@ import { ReactComponent as ProIcon } from "./icon-pro.svg";
 
 const Step2 = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const billingType = useSelector(selectBillingType);
   const billingOption = useSelector(selectBillingOption);
 
@@ -41,6 +43,8 @@ const Step2 = () => {
 
   const billingTypeInput = useRef();
   const billingTypeSpan = useRef();
+
+  const errorMessage = useRef();
 
   useEffect(() => {
     if (billingType === "yearly") {
@@ -171,6 +175,23 @@ const Step2 = () => {
     }
   };
 
+  const handleSubmit = () => {
+    let arcade = arcadeBillingOption.current;
+    let advanced = advancedBillingOption.current;
+    let pro = proBillingOption.current;
+    let error = errorMessage.current;
+    if (
+      arcade.classList.contains("active") ||
+      advanced.classList.contains("active") ||
+      pro.classList.contains("active")
+    ) {
+      navigate("/add-ons");
+      error.classList.add("hide");
+    } else {
+      error.classList.remove("hide");
+    }
+  };
+
   return (
     <>
       <div className="mobileTopBar">
@@ -220,7 +241,9 @@ const Step2 = () => {
             <p className="stepSubText">
               You have the option of monthly or yearly billing.
             </p>
-
+            <p className="add-ons-error-message hide" ref={errorMessage}>
+              Please select a plan type
+            </p>
             <div className="billingOptionContainer">
               <div
                 className="billingOption arcade"
@@ -337,9 +360,9 @@ const Step2 = () => {
               <Link to="/">
                 <button className="desktopBackBtn">Go Back</button>
               </Link>
-              <Link to="/add-ons">
-                <button className="desktopNextStepBtn">Next Step</button>
-              </Link>
+              <button className="desktopNextStepBtn" onClick={handleSubmit}>
+                Next Step
+              </button>
             </div>
           </div>
         </div>
@@ -348,9 +371,9 @@ const Step2 = () => {
         <Link to="/">
           <button className="mobileBackBtn">Go Back</button>
         </Link>
-        <Link to="/add-ons">
-          <button className="mobileNextStepBtn">Next Step</button>
-        </Link>
+        <button className="mobileNextStepBtn" onClick={handleSubmit}>
+          Next Step
+        </button>
       </div>
     </>
   );

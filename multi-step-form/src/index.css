@@ -5,6 +5,7 @@
   --Pastel-blue: hsl(228, 100%, 84%); /*	#adbeff */
   --Light-blue: hsl(206, 94%, 87%); /* #bfe2fd */
   --Strawberry-red: hsl(354, 84%, 57%); /* #ed3548 */
+  --Success-green: #39ed35;
   /* Neutral */
   --Cool-gray: hsl(231, 11%, 63%); /* #9699ab */
   --Light-gray: hsl(229, 24%, 87%); /*	#d6d9e6 */
@@ -158,6 +159,8 @@ body {
 .error-message {
   margin: 25px 0 0;
   color: var(--Strawberry-red);
+  text-align: right;
+  padding-left: 5px;
 }
 
 .name-input,
@@ -191,8 +194,22 @@ body {
   outline: 1px solid var(--Strawberry-red);
 }
 
+.name-input.passed,
+.email-input.passed,
+.phone-input.passed {
+  outline: 1px solid var(--Success-green);
+}
+
 /******************************************/
 /* Step2 Page */
+.add-ons-error-message {
+  color: var(--Strawberry-red);
+  margin: 0;
+  line-height: 20px;
+
+  padding-left: 5px;
+}
+
 .billingOptionContainer {
   display: flex;
   margin-top: 45px;
@@ -217,11 +234,11 @@ body {
 }
 
 .billingOption:hover {
-  border: 1px solid var(--Purplish-blue);
+  outline: 1px solid var(--Purplish-blue);
 }
 
 .billingOption.active {
-  border: 1px solid var(--Purplish-blue);
+  outline: 1px solid var(--Purplish-blue);
   background-color: var(--Alabaster);
 }
 
@@ -702,6 +719,10 @@ input:checked + .slider:before {
 
   /******************************************/
   /* Step2 Page */
+  .add-ons-error-message {
+    font-size: 14px;
+  }
+
   .selectPlanContainer {
     display: block;
   }
@@ -724,9 +745,6 @@ input:checked + .slider:before {
     height: 15%;
     flex-direction: row;
     align-items: center;
-  }
-
-  .billingOptionTextContainer {
   }
 
   .billingTypeContainer {
