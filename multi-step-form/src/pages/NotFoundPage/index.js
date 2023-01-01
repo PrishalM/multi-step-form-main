@@ -7,22 +7,20 @@ const NotFoundPage = () => {
       <div className="mainContainer">
         <div className="desktopSideBar"></div>
         <div className="mainContent">
-          <div className="personalInfoContainer">
+          <div className="notFoundPageContainer">
             <h1 className="stepHeader">Page Not Found</h1>
             <p className="stepSubText">
-              Please provide your name, email address, and phone number.
+              You can go back to the start of this form by clicking the button
+              below.
             </p>
 
-            <div className="desktopBtnContainer">
-              <span></span>
-              <button className="desktopNextStepBtn">Next Step</button>
+            <div className="notFoundPageBackButtonContainer">
+              <button className="notFoundPageBackButton">
+                Back to the start
+              </button>
             </div>
           </div>
         </div>
-      </div>
-      <div className="mobileBottomBar">
-        <span></span>
-        <button className="mobileNextStepBtn">Next Step</button>
       </div>
     </>
   );

@@ -563,6 +563,38 @@ input:checked + .slider:before {
 }
 
 /******************************************/
+/* NotFoundPage */
+.notFoundPageContainer {
+  padding: 40px 80px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.notFoundPageBackButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.notFoundPageBackButton {
+  color: var(--White);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--Marine-blue);
+  border: 1px solid var(--Marine-blue);
+  padding: 10px 15px;
+}
+
+.notFoundPageBackButton:hover {
+  background-color: hsl(213, 96%, 18%, 85%);
+  border: 1px solid hsl(213, 96%, 18%, 85%);
+}
+
+/******************************************/
 
 .desktopBtnContainer {
   margin-top: auto;
