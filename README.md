@@ -27,7 +27,7 @@ Create a simple multiple-step form where users should be able to:
 
 ### Screenshot
 
-(./design/desktop-preview.jpg)
+![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
 
 ### Links
 
