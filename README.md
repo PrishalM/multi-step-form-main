@@ -1,4 +1,4 @@
-# Multi-step form Template
+# Multi-step form
 
 This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ).
 
@@ -17,16 +17,17 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 
 ### The challenge
 
-Users should be able to:
+Create a simple multiple-step form where users should be able to:
 
 - Complete each step of the sequence
 - See a summary of their selections on the final step and confirm their order
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
+- See front-end validation on inputs to proceed to subsequent steps
 
 ### Screenshot
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+(./design/desktop-preview.jpg)
 
 ### Links
 
@@ -39,8 +40,8 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS3
 - [React](https://reactjs.org/)
-- [React-Router] (https://reactrouter.com/)
-- [Redux-Toolkit] (https://redux-toolkit.js.org/)
+- [React-Router](https://reactrouter.com/)
+- [Redux-Toolkit](https://redux-toolkit.js.org/)
 
 ### What I learned
 
@@ -48,7 +49,7 @@ I have used Redux previously, however this was the first project I used Redux-to
 
 ## Author
 
-- Website - [Prishal](https://prish.al)
+- Website - [Prish.al](https://prish.al)
 - GitHub - [@PrishalM](https://github.com/prishalM/)
 - Frontend Mentor - [@PrishalM](https://www.frontendmentor.io/profile/PrishalM)
 - Instagram - [@prish.al](https://www.twitter.com/prish.al)
