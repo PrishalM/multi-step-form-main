@@ -177,27 +177,31 @@ body {
 .name-input:hover,
 .email-input:hover,
 .phone-input:hover {
-  outline: 1px solid var(--Purplish-blue);
+  outline: none;
+  border: 1px solid var(--Purplish-blue);
   cursor: pointer;
 }
 
 .name-input:focus-visible,
 .email-input:focus-visible,
 .phone-input:focus-visible {
-  outline: 1px solid var(--Purplish-blue);
+  outline: none;
+  border: 1px solid var(--Purplish-blue);
   cursor: text;
 }
 
 .name-input.error,
 .email-input.error,
 .phone-input.error {
-  outline: 1px solid var(--Strawberry-red);
+  outline: none;
+  border: 1px solid var(--Strawberry-red);
 }
 
 .name-input.passed,
 .email-input.passed,
 .phone-input.passed {
-  outline: 1px solid var(--Success-green);
+  outline: none;
+  border: 1px solid var(--Success-green);
 }
 
 /******************************************/
@@ -206,7 +210,6 @@ body {
   color: var(--Strawberry-red);
   margin: 0;
   line-height: 20px;
-
   padding-left: 5px;
 }
 
@@ -234,11 +237,13 @@ body {
 }
 
 .billingOption:hover {
-  outline: 1px solid var(--Purplish-blue);
+  outline: none;
+  border: 1px solid var(--Purplish-blue);
 }
 
 .billingOption.active {
-  outline: 1px solid var(--Purplish-blue);
+  outline: none;
+  border: 1px solid var(--Purplish-blue);
   background-color: var(--Alabaster);
 }
 
