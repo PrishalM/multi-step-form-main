@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NotFoundPage = () => {
   return (
@@ -15,9 +16,11 @@ const NotFoundPage = () => {
             </p>
 
             <div className="notFoundPageBackButtonContainer">
-              <button className="notFoundPageBackButton">
-                Back to the start
-              </button>
+              <Link to="/">
+                <button className="notFoundPageBackButton">
+                  Back to the start
+                </button>
+              </Link>
             </div>
           </div>
         </div>
