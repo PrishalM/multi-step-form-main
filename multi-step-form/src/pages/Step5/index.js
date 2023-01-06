@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Footer } from "../../layout";
+
 import { ReactComponent as ThankYouIcon } from "./icon-thank-you.svg";
 
 const Step5 = () => {
@@ -61,6 +63,7 @@ const Step5 = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

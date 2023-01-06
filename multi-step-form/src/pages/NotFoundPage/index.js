@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Footer } from "../../layout";
+
 const NotFoundPage = () => {
   return (
     <>
@@ -25,6 +27,7 @@ const NotFoundPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

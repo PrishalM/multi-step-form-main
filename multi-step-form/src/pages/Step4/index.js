@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { Footer } from "../../layout";
+
 import { useSelector } from "react-redux";
 import { selectBillingType } from "../../reducers/billingTypeSlice";
 import { selectBillingOption } from "../../reducers/billingOptionSlice";
@@ -254,6 +256,7 @@ const Step4 = () => {
           <button className="mobileConfirmBtn">Confirm</button>
         </Link>
       </div>
+      <Footer />
     </>
   );
 };

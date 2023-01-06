@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { Footer } from "../../layout";
+
 import { saveName, selectName } from "../../reducers/nameSlice";
 import { saveEmail, selectEmail } from "../../reducers/emailSlice";
 import { savePhone, selectPhone } from "../../reducers/phoneSlice";
@@ -295,6 +297,7 @@ const Step1 = () => {
           Next Step
         </button>
       </div>
+      <Footer />
     </>
   );
 };

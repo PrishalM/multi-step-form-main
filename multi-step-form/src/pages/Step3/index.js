@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { Footer } from "../../layout";
+
 import { useDispatch, useSelector } from "react-redux";
 import { selectBillingType } from "../../reducers/billingTypeSlice";
 import {
@@ -275,6 +277,7 @@ const Step3 = () => {
           <button className="mobileNextStepBtn">Next Step</button>
         </Link>
       </div>
+      <Footer />
     </>
   );
 };
