@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        Created by
+        Developed by
         <a href="https://prish.al" target="_blank" rel="noopener noreferrer">
           {" "}
           Prishal
